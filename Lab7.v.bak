@@ -1,0 +1,19 @@
+module Lab7(clk, reset, rd, rs1, rs2, imm);
+
+input reset, clk;
+output rd,rs1,rs2,imm; 
+
+wire [7:0]PCout;
+wire [7:0]PCin;
+wire [31:0] ROMout;
+
+ProgramCounter(clk, reset, PCin, PCout); //ProgramCounter(clk, reset, PCo, PCi);
+
+addr(PCin,PCout); //addr (PCi, PCo);
+
+ROM(PCout, ROMout); // ROM(address, InstOut);
+
+InstructionDecoder(ROMout, rd, rs1, rs2, imm); //InstructionDecoder(instr, rd, rs1, rs2, imm)
+
+
+endmodule

@@ -1,0 +1,75 @@
+module Lab7_TB;
+
+reg clk, reset;
+
+wire [4:0] rd, rs1, rs2 ;
+wire [7:0] imm; 
+
+Lab7 dut (.clk (clk), .reset (reset), .rd (rd), .rs1 (rs1), .rs2 (rs2), .imm (imm));
+
+//give other inputs
+initial begin 
+reset = 0;
+
+clk = 0;
+
+forever #5 clk = ~clk;
+ end
+
+initial begin // 
+
+#10;
+
+
+#10;
+
+
+#10;
+
+
+#10;
+
+
+#10;
+
+
+#10;
+
+
+#10;
+
+
+#10;
+
+
+#10;
+
+
+#10;
+ reset <= 1'b1;
+
+#10;
+reset <= 1'b0;
+
+#10;
+
+
+#10;
+
+
+#10;
+
+
+#10;
+
+
+#10;
+
+
+#40 $stop;
+
+end
+
+endmodule
+
+

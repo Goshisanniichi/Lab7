@@ -1,0 +1,17 @@
+module ProgramCounter(clk, reset, PCOut, PCIn);
+
+	input clk;
+	input reset;
+	input PCIn;
+	output reg PCOut; 
+
+	always @(posedge clk)
+	begin
+		if (reset)
+			PCOut = 0;
+		else 
+			PCOut = PCOut + 1;
+		
+	end
+
+endmodule
